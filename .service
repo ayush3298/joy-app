@@ -3,11 +3,11 @@ Description=Gunicorn instance to serve joy-app
 After=network.target
 
 [Service]
-User={{ ansible_ssh_user }}
+User=ubuntu
 Group=www-data
-WorkingDirectory=/home/{{ ansible_ssh_user }}/{{ app_name }}
-Environment="PATH=/home/{{ ansible_ssh_user }}/{{ app_name }}/env/bin"
-ExecStart=/home/{{ ansible_ssh_user }}/{{ app_name }}/env/bin/gunicorn --workers 3 --bind unix:{{ app_name }}.sock -m 007 wsgi:app
+WorkingDirectory=/home/ubuntu/joy-app
+Environment="PATH=/home/ubuntu/joy-app/env/bin"
+ExecStart=/home/ubuntu/joy-app/env/bin/gunicorn --workers 3 --bind unix:joy-app.sock -m 007 wsgi:app
 
 [Install]
 WantedBy=multi-user.target
