@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7fc4e99-a98d-4063-b618-8cd6f52e7c97" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.hosts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.nginx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.service" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ansible.cfg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirments.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wsgi.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/deploy.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.db" beforeDir="false" afterPath="$PROJECT_DIR$/test.db" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -135,7 +128,7 @@
       <option name="presentableId" value="Default" />
       <updated>1568805025849</updated>
       <workItem from="1568805040592" duration="7757000" />
-      <workItem from="1568961080961" duration="7133000" />
+      <workItem from="1568961080961" duration="10626000" />
     </task>
     <servers />
   </component>
