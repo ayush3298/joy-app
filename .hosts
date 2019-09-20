@@ -4,11 +4,12 @@
 #127.0.0.1
 
 [aws]
-18.191.110.131 ansible_user=ec2-user ansible_ssh_private_key_file=ayush.pem
+18.216.219.147 ansible_user=ubuntu ansible_ssh_private_key_file=ayush.pem
+#ec2-18-216-219-147.us-east-2.compute.amazonaws.com ansible_user=ubuntu ansible_ssh_private_key_file=ayush.pem
 
 
 [aws:vars]
 # Local variables for Ansible playbooks
-ansible_ssh_user=ec2-user
+ansible_ssh_user=ubuntu
 github_user=ayush3298
 app_name=joy-app

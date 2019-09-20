@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 [Unit]
 Description=Gunicorn instance to serve {{ app_name }}
 After=network.target
