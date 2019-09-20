@@ -1,5 +1,5 @@
 [Unit]
-Description=Gunicorn instance to serve {{ app_name }}
+Description=Gunicorn instance to serve joy-app
 After=network.target
 
 [Service]
