@@ -22,8 +22,9 @@ class database:
             curr = conn.cursor()
             query = '''INSERT INTO TEST_TABLE (name, favourate_color, cat_or_dog)
              VALUES ("{}", "{}","{}")'''.format(name, favourate_color, cat_or_dog)
-
             curr.execute(query)
             conn.commit()
+            return True
         except sqlite3.IntegrityError:
             print('Row with this name already exists.')
+            return False

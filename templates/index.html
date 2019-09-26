@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Bootstrap Example</title>
+    <title></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -87,7 +87,6 @@
         }
 
 
-
         .fullscreen_bg {
             position: fixed;
             top: 0;
@@ -124,6 +123,7 @@
     </style>
 </head>
 <body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
 <div id="fullscreen_bg" class="fullscreen_bg"/>
 <div id="regContainer" class="container">
     <div class="row">
@@ -135,25 +135,26 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-12">
-                            <form id="login-form" action="/data" method="post"  style="display: block;">
+                            <form id="login-form" action="/data" method="post" style="display: block;">
                                 <div class="form-group">
                                     <label for="name">Name:-</label>
-                                    <input type="text" name="name" id="name" tabindex="1" class="form-control"
+                                    <input required type="text" name="name" id="name" tabindex="1" class="form-control"
                                            placeholder="Name" value="">
                                 </div>
                                 <div class="form-group">
                                     <label for="color">Favorite Color:-</label>
-                                    <input type="text" name="color" id="color" tabindex="2" class="form-control"
+                                    <input required type="text" name="color" id="color" tabindex="2"
+                                           class="form-control"
                                            placeholder="favorite color">
                                 </div>
-                                <div class="form-group", >
+                                <div class="form-group" ,>
                                     <label for="color">Cat Or Dog</label>
                                     <div class="checkbox">
                                         <label>
-                                            <input type="radio" name="dog_or_cat" value="Cat" id="">Cat
+                                            <input required type="radio" name="dog_or_cat" value="Cat" id="">Cat
                                         </label>
                                         <label>
-                                            <input type="radio" name="dog_or_cat" value="Dog" id="">Dog
+                                            <input required type="radio" name="dog_or_cat" value="Dog" id="">Dog
                                         </label>
                                     </div>
                                 </div>
@@ -167,6 +168,32 @@
                                     </div>
                                 </div>
                             </form>
+                            <script>
+                                function getCookie() {
+                                    var value = "; " + document.cookie;
+                                    var parts = value.split("; " + 'key' + "=");
+                                    if (parts.length == 2) return parts.pop().split(";").shift();
+                                }
+
+                                $("form").on("submit", function (event) {
+                                    event.preventDefault();
+                                    var formString = $(this).serialize(); // All data in one String.
+                                    var encrypted = CryptoJS.AES.encrypt(formString, getCookie());
+                                    console.log(encrypted)
+                                    $.ajax({
+                                        type: 'POST',
+                                        url: window.location.href + 'data',
+                                        data: {
+                                            'data': encrypted.toString(),
+                                        },
+                                        success: function (msg) {
+                                            alert('Data Inserted');
+                                        }
+                                    });
+
+
+                                });
+                            </script>
 
                         </div>
                     </div>
